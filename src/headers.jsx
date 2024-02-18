@@ -2,16 +2,16 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
-
+import Sym from "./images/sym.svg"
 function PortfolioShowcase({page = false}) {
   return (
     <>
       {!page || page === "mockup" ? <Link to="/mockups"><PortfolioItem>
         <PortfolioContent>
           <ImageContainer>
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-                        <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
+            <Image loading="lazy" src={Sym} />
+                        <Image loading="lazy" src={Sym} />
+            <Image loading="lazy" src={Sym} />
 
           </ImageContainer>
           {!page ? <PortfolioText>
@@ -23,9 +23,9 @@ function PortfolioShowcase({page = false}) {
       {!page || page === "posters" ? <Link to="/posters"><PortfolioItem bg="#cc4600">
         <PortfolioContent>
           <ImageContainer>
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-                        <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
+            <Image loading="lazy" src={Sym} />
+                        <Image loading="lazy" src={Sym} />
+            <Image loading="lazy" src={Sym} />
 
           </ImageContainer>
           {!page ? <PortfolioText color="#cc4600">
@@ -37,9 +37,9 @@ function PortfolioShowcase({page = false}) {
       {!page || page === "resume" ? <Link to="/resume"><PortfolioItem bg="#2C75FF">
         <PortfolioContent>
           <ImageContainer>
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-                        <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
-            <Image loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d74092c54270d5f6ba67517e34565cc1b6a992f7b4cee7dcdce7635a078d5b2f?apiKey=82e3657eab4343438c9eff3719fbcc16&" />
+            <Image loading="lazy" src={Sym} />
+                        <Image loading="lazy" src={Sym} />
+            <Image loading="lazy" src={Sym} />
 
           </ImageContainer>
           {!page ? <PortfolioText color="white">

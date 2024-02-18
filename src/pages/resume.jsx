@@ -19,34 +19,39 @@ function MyPdfViewer() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1.0);
-
+  const [zoomBtn, setZoomBtn] = useState(false);
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
     setPageNumber(1);
   }
 
   const zoomIn = () => {
+    setZoomBtn(true);
     setScale((prevScale) => prevScale + 0.1);
   };
 
   const zoomOut = () => {
+    setZoomBtn(true);
+
     setScale((prevScale) => Math.max(prevScale - 0.1, 0.1));
   };
 
   useEffect(() => {
-    const adjustScaleToViewport = () => {
-      const viewportWidth = window.innerWidth;
-      const scaleFactor =
-        viewportWidth < 444 ? 0.4 : viewportWidth < 768 ? 0.6 : 1.2;
-      setScale(scaleFactor);
-    };
+    if (!zoomBtn) {
+      const adjustScaleToViewport = () => {
+        const viewportWidth = window.innerWidth;
+        const scaleFactor =
+          viewportWidth < 444 ? 0.4 : viewportWidth < 768 ? 0.6 : 1.2;
+        setScale(scaleFactor);
+      };
 
-    const debouncedAdjustScale = debounce(adjustScaleToViewport, 100);
+      const debouncedAdjustScale = debounce(adjustScaleToViewport, 100);
 
-    window.addEventListener("resize", debouncedAdjustScale);
-    adjustScaleToViewport(); // Adjust scale when component mounts
+      window.addEventListener("resize", debouncedAdjustScale);
+      adjustScaleToViewport(); // Adjust scale when component mounts
 
-    return () => window.removeEventListener("resize", debouncedAdjustScale);
+      return () => window.removeEventListener("resize", debouncedAdjustScale);
+    }
   }, []);
 
   const downloadPdf = () => {
@@ -93,7 +98,13 @@ function MyPdfViewer() {
           Download
         </button>
       </div>
-      <div style={{ width: "100%", height: "100%", background: "black" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          background: "black",
+          minHeight: "100vh",
+        }}>
         <div style={documentStyles}>
           <Document
             file={`${process.env.PUBLIC_URL}/resume.pdf`}

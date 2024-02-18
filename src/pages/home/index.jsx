@@ -2,6 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import Headers from "../../headers";
 import AnimationComponent from "../../animation/component";
+import RedBg from "../../images/red rectangle.svg";
+import Barcode from "../../images/bar code.svg"
+import Mouth from "../../images/mouth.png"
 
 const HomePage = () => {
   return (
@@ -11,7 +14,7 @@ const HomePage = () => {
         <ContentWrapper>
           <ArtworkImage
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/717d0123ee81268ece1d244046060b5adebb36cd495fdb54cf1a9248f66bb951?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+            src={RedBg}
           />
           <ArtCategory>Portfolio</ArtCategory>
           <ArtTitle>Amandine’s Portfolio</ArtTitle>
@@ -30,14 +33,14 @@ const HomePage = () => {
           </Schedule>
           <EventPoster
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/b575d59a344f18e81017d8e6862bcb3cb87b9f68bcee376552bb45f74f36c668?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+            src={Barcode}
           />
         </ContentWrapper>
         <AnimationComponent />
 
         <ArtworkPreview
           loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e5f6abaac2e989fa9613591ebd35b9af4b5173f726d1801750d03f6d490d3148?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+          srcSet={Mouth}
         />
       </MainContent>
       <GallerySection>
@@ -210,12 +213,10 @@ const Time = styled.div`
 `;
 
 const EventPoster = styled.img`
-  aspect-ratio: 3.33;
-  object-fit: auto;
-  object-position: center;
-  width: 100%;
-  align-self: center;
-  margin-top: 19px;
+ position: absolute;
+  bottom: 19px;
+  width: 60%;
+  margin-left: 15%;
 `;
 
 const GallerySection = styled.div`

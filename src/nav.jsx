@@ -1,31 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-function PortfolioNavigation() {
-  const [active, setActive] = useState(false);
+import Star from "./images/star.png"
+import Hamburger from './images/hamburger.svg'
+import Cross from './images/cross.svg'
 
- 
+function PortfolioNavigation() {
+  const [active, setActive] = useState(false); 
   return (
     <>
       <PortfolioContainer>
         <PortfolioHeader>
           <Link to="/"><PortfolioImage
             loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/724e35803cc6daa70c0fd942fd7d6b32abcb0b7f89149b656c5000e0cb842db0?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+            srcSet={Star}
           /></Link>
           <Link to="/"><PortfolioTitle>Amandine’s portfolio</PortfolioTitle></Link>
           {active ? (
             <ProfileImage
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/4842ea78072d00c5972c9e2fc338e2a095a5cda416d776b7b4545d1cba6263fe?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+              src={Cross}
               onClick={() => setActive(!active)}
             />
           ) : (
             <ProfileImage
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/4694651af64b6a70401728d46713640378a026cd9081cd03c05f99ddbeefdd3f?apiKey=82e3657eab4343438c9eff3719fbcc16&"
+              src={Hamburger}
               onClick={() => setActive(!active)}
             />
           )}

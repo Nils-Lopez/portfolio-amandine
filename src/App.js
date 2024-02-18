@@ -1,13 +1,14 @@
 import "bulma/css/bulma.min.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {useLayoutEffect} from 'react';
 
 import Home from "./pages/home/index";
 import MockUps from "./pages/mockups/index";
 import Posters from "./pages/posters/index";
 import PortfolioNavigation from "./nav";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
-import Resume from "./pages/resume"
+import Resume from "./pages/resume";
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Clash Display';
@@ -47,22 +48,31 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Wrapper = ({ children }) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+  return children;
+};
+
 function App() {
   return (
     <>
       <BrowserRouter>
-        <GlobalStyle />
-        <PortfolioNavigation />
+        <Wrapper>
+          <GlobalStyle />
+          <PortfolioNavigation />
 
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="mockups" element={<MockUps />} />
-            <Route path="posters" element={<Posters />} />
-                        <Route path="resume" element={<Resume />} />
-
-          </Route>
-        </Routes>
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="mockups" element={<MockUps />} />
+              <Route path="posters" element={<Posters />} />
+              <Route path="resume" element={<Resume />} />
+            </Route>
+          </Routes>
+        </Wrapper>
       </BrowserRouter>
     </>
   );
