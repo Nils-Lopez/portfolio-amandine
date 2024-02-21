@@ -1,9 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Home from "../../images/mockuphomepage.png";
-import Audio from "../../images/mockupaudio.png";
-import Podcast from "../../images/mockuppodcast.png";
+import Home from "../../images/homescreen.jpg";
+import Audio from "../../images/indexaudio.jpg";
+import Splash from "../../images/splashscreen.jpg";
+import Podcast from "../../images/audio.jpg";
 
 import BadgeSVG from "../../badge";
 
@@ -17,7 +18,12 @@ function PortfolioGallery() {
       </ItemContainer>
       <ItemContainer>
         <BadgeSVG color="#252525" />
-        <ItemTitle>HomePage</ItemTitle>
+        <ItemTitle>Splash Screen</ItemTitle>
+        <Poster src={Splash} />
+      </ItemContainer>
+      <ItemContainer>
+        <BadgeSVG color="#252525" />
+        <ItemTitle>Home</ItemTitle>
         <Poster src={Home} />
       </ItemContainer>
       

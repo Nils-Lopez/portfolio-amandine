@@ -3,45 +3,29 @@ import styled from "styled-components";
 import Headers from "../../headers";
 import AnimationComponent from "../../animation/component";
 import RedBg from "../../images/red rectangle.svg";
-import Barcode from "../../images/bar code.svg"
-import Mouth from "../../images/mouth.png"
+import Barcode from "../../images/bar code.svg";
+import Mouth from "../../images/mouth.png";
 
 const HomePage = () => {
   return (
     <PortfolioContainer>
-      
       <MainContent>
         <ContentWrapper>
-          <ArtworkImage
-            loading="lazy"
-            src={RedBg}
-          />
+          <ArtworkImage loading="lazy" src={RedBg} />
           <ArtCategory>Portfolio</ArtCategory>
           <ArtTitle>Amandine’s Portfolio</ArtTitle>
-          <ExhibitionTitle>Art exhibition</ExhibitionTitle>
-          <DateRange>16/02-25/03/2024</DateRange>
-          <Description>A small website about my art</Description>
-          <Location>
-            Av. Jean-François Debecker 10, 1200 Woluwe-Saint-Lambert
-          </Location>
-          <Schedule>
-            <Day>FRIDAY</Day>
-            <TimeSlot>
-              <Date>16/02/2024</Date>
-              <Time>17:30-18:30</Time>
-            </TimeSlot>
-          </Schedule>
-          <EventPoster
-            loading="lazy"
-            src={Barcode}
-          />
+
+          <Description>
+            As an graphic design student, I've curated a digital showcase of my
+            passion for blending art with technology, inviting you to explore my
+            creative world in two clicks.
+          </Description>
+
+          <EventPoster loading="lazy" src={Barcode} />
         </ContentWrapper>
         <AnimationComponent />
 
-        <ArtworkPreview
-          loading="lazy"
-          srcSet={Mouth}
-        />
+        <ArtworkPreview loading="lazy" srcSet={Mouth} />
       </MainContent>
       <GallerySection>
         <Headers />
@@ -174,8 +158,9 @@ const DateRange = styled.div`
 const Description = styled.div`
   position: relative;
   margin-top: 11px;
-  white-space: nowrap;
-  font: 400 18px Clash Display, sans-serif;
+  padding-left: 10px;
+  white-space: normal;
+  font: 100 25px Clash Display, sans-serif;
 `;
 
 const Location = styled.div`
@@ -213,7 +198,7 @@ const Time = styled.div`
 `;
 
 const EventPoster = styled.img`
- position: absolute;
+  position: absolute;
   bottom: 19px;
   width: 60%;
   margin-left: 15%;

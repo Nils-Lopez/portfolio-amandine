@@ -113,7 +113,9 @@ function MyPdfViewer() {
               cMapUrl: "cmaps/",
               cMapPacked: true,
               workerSrc: `/pdf.worker.js`,
-            }}>
+            }}
+            style={{ backgroundColor: 'black'}}
+            >
             {Array.from(new Array(numPages), (el, index) => (
               <Page
                 key={`page_${index + 1}`}
