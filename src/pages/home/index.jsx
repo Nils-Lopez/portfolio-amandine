@@ -16,7 +16,7 @@ const HomePage = () => {
           <ArtTitle>Amandine’s Portfolio</ArtTitle>
 
           <Description>
-            As an graphic design student, I've curated a digital showcase of my
+            As a student in graphic design, I've curated a digital showcase of my
             passion for blending art with technology, inviting you to explore my
             creative world in two clicks.
           </Description>
